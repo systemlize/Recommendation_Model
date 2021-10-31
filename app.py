@@ -30,7 +30,7 @@ def hello():
             x = i
             break
         json_data = data[x]
-        csv_file = open("../../../../project/chonburi_new_user.csv", 'w', encoding='utf8', newline='')
+        csv_file = open("chonburi_new_user.csv", 'w', encoding='utf8', newline='')
         csv_writer = csv.writer(csv_file)
         count = 0
         for element in json_data:
@@ -42,7 +42,7 @@ def hello():
         csv_file.close()
 
         old_user = chonburi.df_person
-        new_user = chonburi.pd.read_csv("../../../../project/chonburi_new_user.csv")
+        new_user = chonburi.pd.read_csv("chonburi_new_user.csv")
         new_user.columns = ['เพศ', 'อายุ', 'การศึกษา', 'อาชีพ', 'รายได้',
        'สถานภาพ',
        'เที่ยวบ่อย',

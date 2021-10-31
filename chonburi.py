@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 
-df = pd.read_csv("C:\project\chonburi.csv")
+df = pd.read_csv("chonburi.csv")
 
 
 df.columns = ['Timestamp', 'เพศ', 'อายุ', 'การศึกษา', 'อาชีพ', 'รายได้',
@@ -65,7 +65,7 @@ df_place = df[[ 'เกาะแสมสาร',
        'พิพิธภัณฑ์ภาพจิตกรรม 3 มิติ']]
 
 
-df_new_user = pd.read_csv('C:\project\chonburi_new_user.csv')
+df_new_user = pd.read_csv('chonburi_new_user.csv')
 
 df_new_user.columns = ['เพศ', 'อายุ', 'การศึกษา', 'อาชีพ', 'รายได้',
        'สถานภาพ',
