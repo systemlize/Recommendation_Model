@@ -1,5 +1,16 @@
 {% block content %}
 <head>
+   <style>
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
 <script type="text/javascript">
    function checkBoxVac_a() {
 	var checkBoxGroup = document.forms['form_data']['vac_a'];
@@ -58,12 +69,12 @@ function checkBoxVaca_a() {
 </head>
 <h1>แนะนำสถานที่ท่องเที่ยวในจังหวัดชลบุรี</h1>
 <form action="/" method="post" name="form_data" id="form_data" onsubmit="return myFunction()">
-    <h1>ข้อมูลส่วนบุคคล</h1>
+    <h2>ข้อมูลส่วนบุคคล</h2><hr>
     <h4>เพศ</h4>
     <input type="radio" value="ชาย" id="male" name="gender" required>
     <label for="male">ชาย</label><br>
     <input type="radio"  value="หญิง" id="female" name="gender" >
-    <label for="female">หญิง</label>
+    <label for="female">หญิง</label><hr>
     <h4>อายุ</h4>
  <input type="radio" value="ต่ำกว่าหรือเท่ากับ 20 ปี" id="age_1" name="age" required>
     <label for="age_1">ต่ำกว่าหรือเท่ากับ 20 ปี</label><br>
@@ -76,7 +87,7 @@ function checkBoxVaca_a() {
     <input type="radio" value="51-60 ปี" id="age_5" name="age" >
     <label for="age_5">51-60 ปี</label><br>
     <input type="radio"  value="สูงกว่าหรือเท่ากับ 61 ปี" id="age_6" name="age" >
-    <label for="age_6">สูงกว่าหรือเท่ากับ 61 ปี</label>
+    <label for="age_6">สูงกว่าหรือเท่ากับ 61 ปี</label><hr>
     <h4>การศึกษา</h4>
     <input type="radio" value="มัธยมต้น" id="edu_1" name="edu" required>
     <label for="edu_1">มัธยมต้น</label><br>
@@ -87,7 +98,7 @@ function checkBoxVaca_a() {
     <input type="radio"  value="ปริญญาตรี" id="edu_4" name="edu">
     <label for="edu_4">ปริญญาตรี</label><br>
     <input type="radio"  value="ปริญญาโทขึ้นไป" id="edu_5" name="edu">
-    <label for="edu_5">ปริญญาโทขึ้นไป</label>
+    <label for="edu_5">ปริญญาโทขึ้นไป</label><hr>
     <h4>อาชีพ</h4>
     <input type="radio" value="ผู้บริหาร/ผู้จัดการ" id="car_1" name="career" required>
     <label for="car_2">ผู้บริหาร/ผู้จัดการ</label><br>
@@ -110,7 +121,7 @@ function checkBoxVaca_a() {
     <input type="radio"  value="ว่างงาน" id="car_10" name="career">
     <label for="car_10">ว่างงาน</label><br>
      <input type="radio"  value="รับจ้างทั่วไป" id="car_11" name="career">
-    <label for="car_10">รับจ้างทั่วไป</label>
+    <label for="car_10">รับจ้างทั่วไป</label><hr>
     <h4>รายได้ต่อเดือน</h4>
     <input type="radio" value="ต่ำกว่า 10,000 บาท" id="sal_1" name="salary" required>
     <label for="sal_1">ต่ำกว่า 10,000 บาท</label><br>
@@ -121,15 +132,15 @@ function checkBoxVaca_a() {
     <input type="radio"  value="40,000 – 50,000 บาที" id="sal_4" name="salary">
     <label for="sal_4">40,000 – 50,000 บาท</label><br>
     <input type="radio"  value="มากกว่า 50,000 บาท" id="sal_5" name="salary">
-    <label for="sal_5">มากกว่า 50,000 บาท</label>
+    <label for="sal_5">มากกว่า 50,000 บาท</label><hr>
     <h4>สถานภาพครอบครัว</h4>
     <input type="radio" value="โสด" id="fam_1" name="family" required>
     <label for="fam_1">โสด</label><br>
     <input type="radio"  value="สมรส" id="fam_2" name="family">
     <label for="fam_2">สมรส</label><br>
     <input type="radio" value="หย่าร้าง / แยกกันอยู่" id="fam_3" name="family">
-    <label for="fam_3">หย่าร้าง / แยกกันอยู่</label>
-    <h1>ข้อมูลพฤติกรรมการท่องเที่ยวในประเทศ</h1>
+    <label for="fam_3">หย่าร้าง / แยกกันอยู่</label><hr>
+    <h2>ข้อมูลพฤติกรรมการท่องเที่ยวในประเทศ</h2><hr>
     <h4>โดยเฉลี่ยแล้ว คุณเดินทางท่องเที่ยวในประเทศบ่อยแค่ไหน ?</h4>
     <input type="radio" value="น้อยกว่า 1 ครั้งต่อปี" id="vac_1" name="vac" required>
     <label for="vac_1">น้อยกว่า 1 ครั้งต่อปี</label><br>
@@ -140,7 +151,7 @@ function checkBoxVaca_a() {
     <input type="radio"  value="6-8 ครั้งต่อปี" id="vac_4" name="vac">
     <label for="vac_4">6-8 ครั้งต่อปี</label><br>
     <input type="radio"  value="มากกว่า 8 ครั้งต่อปี" id="vac_5" name="vac">
-    <label for="vac_5">มากกว่า 8 ครั้งต่อปี</label>
+    <label for="vac_5">มากกว่า 8 ครั้งต่อปี</label><hr>
     <h4>โดยทั่วไป คุณเดินทางท่องเที่ยวในประเทศกับคนกลุ่มใดบ่อยที่สุด ? (ตอบได้มากกว่า 1 ข้อ แต่ไม่เกิน 2 ข้อ)</h4>
     <input type="checkbox" value="เดินทางคนเดียว" id="vac_a" name="vac_a">
     <label for="vac_a">เดินทางคนเดียว</label><br>
@@ -153,7 +164,7 @@ function checkBoxVaca_a() {
     <input type="checkbox"  value="ไปกับครอบครัวใหญ่ / ญาติ" id="vac_e" name="vac_a">
     <label for="vac_e">ไปกับครอบครัวใหญ่ / ญาติ</label><br>
      <input type="checkbox"  value="ไปกับคณะ (บริษัท,สมาคม,สถาบันการศึกษา)" id="vac_f" name="vac_a">
-    <label for="vac_f">ไปกับคณะ (บริษัท,สมาคม,สถาบันการศึกษา)</label>
+    <label for="vac_f">ไปกับคณะ (บริษัท,สมาคม,สถาบันการศึกษา)</label><hr>
     <h4>ช่วงเวลาที่คุณเลือกเดินทางท่องเที่ยวส่วนใหญ่คือช่วงเวลาใด ?</h4>
      <input type="radio" value="วันธรรมดา" id="vac_day1" name="vac_day" required>
     <label for="vac_day1">วันธรรมดา</label><br>
@@ -164,7 +175,7 @@ function checkBoxVaca_a() {
     <input type="radio"  value="ช่วงปิดเทอม" id="vac_day4" name="vac_day">
     <label for="vac_day4">ช่วงปิดเทอม</label><br>
     <input type="radio"  value="ทุกเวลาที่ต้องการไป" id="vac_day5" name="vac_day">
-    <label for="vac_day5">ทุกเวลาที่ต้องการไป</label>
+    <label for="vac_day5">ทุกเวลาที่ต้องการไป</label><hr>
     <h4>ประเภทของกิจกรรมหรือสถานที่ท่องเที่ยว ที่คุณชอบทำหรือชอบไป เวลาท่องเที่ยวในประเทศ (ตอบได้มากกว่า 1 ข้อ แต่ไม่เกิน 5 ข้อ)</h4>
      <input type="checkbox" value="แหล่งท่องเที่ยวทางประวัติศาสตร์ เช่น ชมโบราณสถาน อุทยานประวัติศาสตร์" id="vaca_1" name="vaca_1">
     <label for="vaca_1">แหล่งท่องเที่ยวทางประวัติศาสตร์ เช่น ชมโบราณสถาน อุทยานประวัติศาสตร์</label><br>
@@ -191,7 +202,7 @@ function checkBoxVaca_a() {
      <input type="checkbox"  value="พักผ่อน และใช้ Facilities ต่างๆ ในโรงแรมที่พัก" id="vaca_12" name="vaca_1">
     <label for="vaca_12">พักผ่อน และใช้ Facilities ต่างๆ ในโรงแรมที่พัก</label><br>
     <input type="checkbox"  value="ชอปปิ้ง แวะร้านจำหน่ายสินค้าของฝาก ของดีในแต่ละจังหวัด" id="vaca_13" name="vaca_1">
-    <label for="vaca_13">ชอปปิ้ง แวะร้านจำหน่ายสินค้าของฝาก ของดีในแต่ละจังหวัด</label>
+    <label for="vaca_13">ชอปปิ้ง แวะร้านจำหน่ายสินค้าของฝาก ของดีในแต่ละจังหวัด</label><hr>
     <h4>ในการท่องเที่ยว ส่วนใหญ่แล้วคุณเน้นการใช้จ่ายเงินเพื่อความคุ้มค่าให้กับสิ่งใดมากที่สุด (ตอบได้มากกว่า 1 ข้อ แต่ไม่เกิน 3 ข้อ)</h4>
      <input type="checkbox" value="ค่าที่พัก / โรงแรม" id="vaca_a" name="vaca_a">
     <label for="vaca_a">ค่าที่พัก / โรงแรม</label><br>
@@ -204,8 +215,8 @@ function checkBoxVaca_a() {
     <input type="checkbox"  value="ค่าสินค้า ชอปปิ้ง ของที่ระลึก" id="vaca_e" name="vaca_a">
     <label for="vaca_e">ค่าสินค้า ชอปปิ้ง ของที่ระลึก</label><br>
      <input type="checkbox"  value="แหล่งบันเทิง" id="vaca_f" name="vaca_a">
-    <label for="vaca_f">แหล่งบันเทิง</label><br>
-    <input type="submit" value="Send" id="checkbtn">
+    <label for="vaca_f">แหล่งบันเทิง</label><br><hr>
+    <input type="submit" value="ส่งคำตอบ">
 </form>
 <script type="text/javascript">checkBoxVac_a()</script>
 <script type="text/javascript">checkBoxVaca_1()</script>
