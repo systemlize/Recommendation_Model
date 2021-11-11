@@ -61,7 +61,7 @@ def hello():
         all_user = all_user.fillna(0)
         place = chonburi.df_place
         x = cosine_similarity(all_user)
-        we = chonburi.travel_reccomender(df_all=all_user, df_place=place, x_user=x, user_ix=-1, k=6, top_n=6)
+        we = chonburi.travel_reccomender(df_all=all_user, df_place=place, x_user=x, user_ix=-1, k=5, top_n=5)
         sr = pd.Series(we)
         result = sr.to_dict()
         return redirect(url_for("submit", data=result))
