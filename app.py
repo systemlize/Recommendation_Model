@@ -68,7 +68,7 @@ def hello():
         we = chonburi.travel_reccomender(df_all=all_user, df_place=place, x_user=x, user_ix=-1, k=5, top_n=5).index
         sr = pd.Series(we)
         result = sr.to_dict()
-        response = f'{result}'
+        response = f'{result.value()}'
 
 
         return ""
