@@ -73,7 +73,7 @@ def hello():
 
         return ""
     else:
-        return jsonify({"result" : response})
+        return response
 
 # @app.route("/sub/<data>")
 # def submit(data):
