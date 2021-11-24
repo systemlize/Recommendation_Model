@@ -2,7 +2,7 @@ import csv
 import json
 
 from sklearn.metrics.pairwise import cosine_similarity
-from flask import Flask, render_template, request, redirect, url_for, jsonify
+from flask import Flask,  request, jsonify
 import pandas as pd
 import chonburi
 
@@ -20,7 +20,6 @@ def hello():
         request_data = request.data
         request_data = json.loads(request_data.decode('utf-8'))
         data = request_data['res']
-        print(data)
         for i in data.keys():
             x = i
             print(x)
@@ -54,13 +53,10 @@ def hello():
         sr = pd.Series(we)
         result = sr.to_json(force_ascii=False)
         response = f'{result}'
-        
-
-
         return ""
     else:
         return response
-    
+
 @app.route("/sub", methods=["GET"])
 def submit():
     old_user = chonburi.df_person
@@ -69,7 +65,8 @@ def submit():
     weare = chonburi.travel_recommender(df_person=old_user, df_place=place, place=p, user_ix=-1, k=10, top_n=10).index
     sre = pd.Series(weare)
     res = sre.to_json(force_ascii=False)
-    return f'{res}
+    response = f'{res}'
+    return response
 
 
 if __name__ ==  "__main__":
