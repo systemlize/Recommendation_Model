@@ -69,6 +69,10 @@ def hello():
         sr = pd.Series(we)
         result = sr.to_json(force_ascii=False)
         response = f'{result}'
+        weare = chonburi.travel_recommender(df_person=old_user, df_place=place, place=p, user_ix=-1, k=10, top_n=10).index
+        sre = pd.Series(weare)
+        res = sre.to_json(force_ascii=False)
+        f'{res}'
 
 
         return ""
