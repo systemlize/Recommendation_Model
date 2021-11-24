@@ -69,19 +69,23 @@ def hello():
         sr = pd.Series(we)
         result = sr.to_json(force_ascii=False)
         response = f'{result}'
-        weare = chonburi.travel_recommender(df_person=old_user, df_place=place, place=p, user_ix=-1, k=10, top_n=10).index
-        sre = pd.Series(weare)
-        res = sre.to_json(force_ascii=False)
-        f'{res}'
+        
 
 
         return ""
     else:
         return response
-
-# @app.route("/sub/<data>")
-# def submit(data):
-#     return render_template("sub.html", data=data)
+    
+@app.route("/sub")
+def submit():
+    old_user = chonburi.df_person
+    place = chonburi.df_place
+    p = cosine_similarity(old_user)
+    weare = chonburi.travel_recommender(df_person=old_user, df_place=place, place=p, user_ix=-1, k=10, top_n=10).index
+    sre = pd.Series(weare)
+    res = sre.to_json(force_ascii=False)
+    f'{res}'
+    return ""
 
 
 if __name__ ==  "__main__":
