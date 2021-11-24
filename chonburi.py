@@ -1,5 +1,7 @@
 import pandas as pd
+from flask import jsonify
 from sklearn.metrics.pairwise import cosine_similarity
+import recmetrics
 
 df = pd.read_csv('chonburi.csv')
 
@@ -102,21 +104,27 @@ x_user = cosine_similarity(df_all)
 place = cosine_similarity(df_person)
 
 
-def travel_reccomender(df_all, df_place, x_user, user_ix=-1, k=403, top_n=10):
+
+
+def travel_reccomender(df_all, df_place, x_user, user_ix=-1, k=456, top_n=10):
     user_similarities = x_user[user_ix]
+
 
     most_similar_users = df_all.index[user_similarities.argpartition(-k)[-k:]]
     most_similar_users = most_similar_users[:-1]
+    print(most_similar_users)
 
 
     rec_place = df_place.iloc[most_similar_users].mean(0).sort_values(ascending=False)
     rec_place_top = rec_place.head(top_n)
     print(rec_place_top)
 
+
     return rec_place_top
 
 
 travel_reccomender(df_all, df_place, x_user, user_ix=-1, k=5, top_n=5)
+
 
 def travel_recommender(df_person, df_place, place,user_ix=-1, k=456, top_n=10):
        user_similarities = place[user_ix]
