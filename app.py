@@ -76,7 +76,7 @@ def hello():
     else:
         return response
     
-@app.route("/sub")
+@app.route("/sub", methods=["GET"])
 def submit():
     old_user = chonburi.df_person
     place = chonburi.df_place
