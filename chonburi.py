@@ -1,8 +1,6 @@
 import pandas as pd
-from flask import jsonify
 from sklearn.metrics.pairwise import cosine_similarity
-import recmetrics
-from sklearn.metrics.pairwise import euclidean_distances
+
 
 df = pd.read_csv('chonburi.csv')
 
@@ -101,8 +99,9 @@ df_all = df_person.append(df_new_user, ignore_index=True, sort=False)
 df_all = df_all.fillna(0)
 
 
-x_user = euclidean_distances(df_all)
-x_user *= -1
+x_user = cosine_similarity(df_all)
+print(x_user)
+
 
 
 
