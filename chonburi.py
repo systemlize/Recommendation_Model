@@ -100,7 +100,7 @@ df_all = df_all.fillna(0)
 
 
 x_user = cosine_similarity(df_all)
-print(x_user)
+
 
 
 
@@ -108,7 +108,7 @@ print(x_user)
 
 def travel_reccomender(df_all, df_place, x_user, user_ix=-1, k=456, top_n=10):
     user_similarities = x_user[user_ix]
-    print(user_similarities)
+
 
     most_similar_users = df_all.index[user_similarities.argpartition(-k)[-k:]]
     most_similar_users = most_similar_users[:-1]

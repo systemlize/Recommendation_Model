@@ -11,15 +11,15 @@ response = ''
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
 
-@app.route("/res", methods=["GET", "POST"])
+@app.route('/res', methods=['GET', 'POST'])
 def hello():
 
     global response
 
-    if request.method == "POST":
+    if request.method == 'POST':
         request_data = request.data
         request_data = json.loads(request_data.decode('utf-8'))
-        data = request_data["res"]
+        data = request_data['res']
         for i in data.keys():
             x = i
             print(x)
@@ -38,7 +38,7 @@ def hello():
 
         old_user = chonburi.df_person
         new_user = chonburi.pd.read_csv("chonburi_new_user.csv")
-        new_user.columns = ['เพศ', 'อายุ', 'การศึกษา', 'อาชีพ', 'รายได้', 'สถานภาพ', 'เที่ยวบ่อย', 'เที่ยวกับ','ช่วงเวลา','ประเภทสถานที่','การใช้เงิน',]
+        new_user.columns = ['เพศ', 'อายุ', 'การศึกษา', 'อาชีพ', 'รายได้', 'สถานภาพ', 'เที่ยวบ่อย', 'เที่ยวกับ', 'ช่วงเวลา', 'ประเภทสถานที่', 'การใช้เงิน']
         col_names = ['เพศ', 'อายุ', 'การศึกษา', 'อาชีพ', 'รายได้', 'สถานภาพ', 'เที่ยวบ่อย', 'เที่ยวกับ', 'ช่วงเวลา', 'ประเภทสถานที่', 'การใช้เงิน']
         dummies_df_new_user = pd.get_dummies(new_user[col_names])
 
