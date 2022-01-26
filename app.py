@@ -2,7 +2,7 @@ import csv
 import json
 
 from sklearn.metrics.pairwise import cosine_similarity
-from flask import Flask,  request, jsonify
+from flask import Flask,  request
 import pandas as pd
 import chonburi
 
@@ -15,7 +15,7 @@ app.config['JSON_AS_ASCII'] = False
 def hello():
 
     global response
-    global responsing
+
     if request.method == "POST":
         request_data = request.data
         request_data = json.loads(request_data.decode('utf-8'))
