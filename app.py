@@ -15,11 +15,11 @@ app.config['JSON_AS_ASCII'] = False
 def hello():
 
     global response
-
+    global responsing
     if request.method == "POST":
         request_data = request.data
         request_data = json.loads(request_data.decode('utf-8'))
-        data = request_data['res']
+        data = request_data["res"]
         for i in data.keys():
             x = i
             print(x)
@@ -57,16 +57,7 @@ def hello():
     else:
         return response
 
-@app.route("/sub", methods=["GET"])
-def submit():
-    old_user = chonburi.df_person
-    place = chonburi.df_place
-    p = cosine_similarity(old_user)
-    weare = chonburi.travel_recommender(df_person=old_user, df_place=place, place=p, user_ix=-1, k=10, top_n=10).index
-    sre = pd.Series(weare)
-    res = sre.to_json(force_ascii=False)
-    response = f'{res}'
-    return response
+
 
 
 if __name__ ==  "__main__":
