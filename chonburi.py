@@ -92,7 +92,7 @@ df_new_user = pd.concat([df_new_user, dummies_df_new_user], axis=1)
 df_new_user = df_new_user.drop(col_names, axis=1)
 
 
-df_all = df_person.append(df_new_user, ignore_index=True, sort=False)
+df_all = df_person._append(df_new_user, ignore_index=True, sort=False)
 
 
 df_all = df_all.fillna(0)
